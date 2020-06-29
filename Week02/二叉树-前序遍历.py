@@ -1,3 +1,4 @@
+
 class NodeTree:
     def __init__(self, val=None, right=None, left=None):
         """创建二叉树
@@ -14,6 +15,21 @@ class NodeTree:
         self.right = right
 
 class Solution:
+    '''
+    递归
+    '''
+    def recursion(self, root):
+        res = []
+        def helper(root):
+            if not root:
+                return
+            res.append(root.val)
+            helper(root.left)
+            helper(root.right)
+
+        helper(root)
+        return res
+
     def inorderTraversal(self, root):
         stack,rst = [root],[]
         while stack:
@@ -28,6 +44,7 @@ class Solution:
 
     def levelOrder(self, root):
         queue, res = [root], []
+        print(queue)
         while queue:
             i = queue.pop(0)
             if isinstance(i, NodeTree):
@@ -73,4 +90,4 @@ class Solution:
 
 nodeTree = NodeTree(1, left=NodeTree(2,left=NodeTree(4,right=NodeTree(7))),
                         right=NodeTree(3,left=NodeTree(5),right=NodeTree(6)))
-print(Solution().preorder(nodeTree))
+print(Solution().levelOrder(nodeTree))
