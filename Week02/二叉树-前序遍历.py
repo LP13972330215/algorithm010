@@ -91,3 +91,11 @@ class Solution:
 nodeTree = NodeTree(1, left=NodeTree(2,left=NodeTree(4,right=NodeTree(7))),
                         right=NodeTree(3,left=NodeTree(5),right=NodeTree(6)))
 print(Solution().levelOrder(nodeTree))
+
+
+if __name__ == '__main__':
+    from collections import namedtuple,defaultdict,deque,ChainMap
+    baseline = {'music': 'bach', 'art': 'rembrandt'}
+    adjustments = {'art': 'van gogh', 'opera': 'carmen'}
+    a = ChainMap(adjustments, baseline)
+    print(a)
