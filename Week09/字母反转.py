@@ -7,7 +7,8 @@ class Solution:
         :param S:
         :return:
         """
-        l1=0;l2=len(S)-1
+        l1=0
+        l2=len(S)-1
         S=list(S)
         while(l2 > l1):
             if S[l2].isalpha() and S[l1].isalpha():
@@ -21,5 +22,5 @@ class Solution:
         return ''.join(S)
 
 if __name__ == "__main__":
-    a = "ab-cd"
+    a = "abc"
     print(Solution().reverseOnlyLetters(a))
